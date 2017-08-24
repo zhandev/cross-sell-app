@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "196e97c89834ead09787a7975134c4be",
-    "content-hash": "9e529caed884c9710a4f72ec43c7a54c",
+    "hash": "528af474e64e6e8e9d02e26a38a31f97",
+    "content-hash": "04514304158681c94156f3305b27ba15",
     "packages": [
         {
             "name": "barryvdh/laravel-debugbar",
@@ -468,16 +468,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.4.33",
+            "version": "v5.4.34",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "e53a81a2bf406f501cdf818ad949f8d6c8dabfc0"
+                "reference": "eaa09c998b315af9fbec04ad29ecfbfd2aa88aeb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/e53a81a2bf406f501cdf818ad949f8d6c8dabfc0",
-                "reference": "e53a81a2bf406f501cdf818ad949f8d6c8dabfc0",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/eaa09c998b315af9fbec04ad29ecfbfd2aa88aeb",
+                "reference": "eaa09c998b315af9fbec04ad29ecfbfd2aa88aeb",
                 "shasum": ""
             },
             "require": {
@@ -593,7 +593,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2017-08-14 20:17:41"
+            "time": "2017-08-23 20:31:28"
         },
         {
             "name": "laravel/tinker",
@@ -1075,52 +1075,6 @@
                 "random"
             ],
             "time": "2017-03-13 16:27:32"
-        },
-        {
-            "name": "phpclassic/php-shopify",
-            "version": "v1.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/phpclassic/php-shopify.git",
-                "reference": "15f053811014fa3945d2b6d30a1c4ae4375087a9"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/phpclassic/php-shopify/zipball/15f053811014fa3945d2b6d30a1c4ae4375087a9",
-                "reference": "15f053811014fa3945d2b6d30a1c4ae4375087a9",
-                "shasum": ""
-            },
-            "require": {
-                "ext-curl": "*",
-                "php": ">=5.6"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^5.5"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "PHPShopify\\": "lib/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "Apache License 2.0"
-            ],
-            "authors": [
-                {
-                    "name": "Tareq Mahmood",
-                    "email": "tareqtms@yahoo.com"
-                }
-            ],
-            "description": "PHP SDK for Shopify API",
-            "homepage": "https://github.com/phpclassic/php-shopify",
-            "keywords": [
-                "php",
-                "sdk",
-                "shopify"
-            ],
-            "time": "2016-09-11 14:01:50"
         },
         {
             "name": "psr/http-message",
