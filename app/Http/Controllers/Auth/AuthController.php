@@ -10,6 +10,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Helpers\Shopify\Shopify;
 use App\Http\Controllers\Controller;
+use App\Models\Shop;
 use Illuminate\Http\Request;
 
 class AuthController extends Controller
@@ -42,8 +43,38 @@ class AuthController extends Controller
             env('SECRET_KEY')
         );
 
-        $shopData = $shopify->get('shop');
+        $shopData = $shopify
+            ->get('shop')
+            ->toArray();
 
+        $shop = $this->checkShop(
+            array_merge(
+                $shopData,
+                ['token' => $shopify->getToken()]
+            )
+        );
+
+        var_dump($shop->toArray());
+
+    }
+
+    private function checkShop(array $shopData):Shop {
+
+        $shop = Shop::find($shopData['id']);
+
+        if(empty($shop)) {
+
+            $shop = Shop::create($shopData);
+
+        }else {
+
+            $shop->update([
+                'token' => $shopData['token']
+            ]);
+
+        }
+
+        return $shop;
     }
 
 }
