@@ -14,3 +14,15 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::prefix('cross-selling')->group(function () {
+
+    Route::namespace('Auth')->group(function () {
+
+        Route::get('install', 'AuthController@install');
+
+        Route::get('auth/callback', 'AuthController@auth');
+
+    });
+
+});
