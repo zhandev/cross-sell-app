@@ -9,6 +9,7 @@
 namespace App\Helpers\Shopify;
 
 use GuzzleHttp\Client;
+use Illuminate\Support\Collection;
 
 class Shopify
 {
@@ -37,10 +38,12 @@ class Shopify
      * @return string
      */
     public static function generateInstallUrl(
+
         string $myShopifyDomain,
         string $apiKey,
         string $scopes,
         string $redirectUrl
+
     ) {
 
         return "https://$myShopifyDomain/admin/oauth/authorize?client_id=$apiKey&scope=$scopes&redirect_uri=https://$redirectUrl&state={nonce}";
@@ -49,11 +52,13 @@ class Shopify
     }
 
     public static function auth(
+
         string $myShopifyDomain,
         string $code,
         string $apiKey,
         string $secretKey
-    ) {
+
+    ): Shopify {
 
         $client = new Client();
 
@@ -83,9 +88,11 @@ class Shopify
      * @return static
      */
     public static function getInstance(
+
         string $myShopifyDomain,
         string $token
-    ) {
+
+    ): Shopify {
 
         return new static($myShopifyDomain, $token);
 
@@ -96,13 +103,13 @@ class Shopify
      *
      * @return string
      */
-    public function getToken() {
+    public function getToken(): string {
 
         return $this->token;
 
     }
 
-    public function get(string $resourceName, array $attr = null) {
+    public function get(string $resourceName, array $attr = null):Collection {
 
         $client = new Client();
 
