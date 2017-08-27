@@ -130,4 +130,25 @@ class Shopify
         return $collections;
 
     }
+
+    public function getCount(string $resourceName, array $attr = null) {
+
+        $client = new Client();
+
+        $attr = $attr ? http_build_query($attr) : '';
+
+        $resource = $this->baseUrl . $resourceName . '/count.json';
+
+        $response = $client->request('GET', "https://" . $this->myShopifyDomain . $resource . '?' . $attr, ['headers' => [
+            'X-Shopify-Access-Token' => $this->token,
+            'X-Frame-Options' => 'allow'
+        ]]);
+
+        return json_decode(
+            $response->getBody()->getContents(),
+            true)
+        ['count'];
+
+
+    }
 }
