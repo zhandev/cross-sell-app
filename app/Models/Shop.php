@@ -8,6 +8,7 @@
 
 namespace App\Models;
 
+use App\Events\ShopCreate;
 use Illuminate\Database\Eloquent\Model;
 
 class Shop extends Model
@@ -29,5 +30,16 @@ class Shop extends Model
         'timezone',
         'token'
     ];
+
+    protected $events = [
+        'created' => ShopCreate::class
+    ];
+
+    public function products() {
+
+        return $this->hasMany('App\Models\Product');
+
+    }
+
 
 }
